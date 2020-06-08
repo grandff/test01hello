@@ -1,6 +1,7 @@
 package test.com.hello;
 
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 
@@ -77,5 +78,33 @@ public class HomeController {
 	}
 	
 	// jackson 라이브러리 추가(maven - jackson, pom.xml에 dependecy 추가)
+	@ResponseBody			
+	@RequestMapping(value = "/test4.do", method = RequestMethod.GET, produces = "application/json; charset=utf-8")		
+	public TestVO test4() {
+		logger.info("Welcome test4!");
+		
+		TestVO vo = new TestVO();
+		vo.setName("kim");
+		vo.setTel("02");
+		return vo;
+	}
+	
+	@ResponseBody			
+	@RequestMapping(value = "/test5.do", method = RequestMethod.GET, produces = "application/json; charset=utf-8")		// produces 옵션을 통해 한글 깨짐 현상 해결
+	public ArrayList<TestVO> test5() {		// arraylist로 리턴	
+		logger.info("Welcome test5!");
+		
+		ArrayList<TestVO> list = new ArrayList<TestVO>();
+		TestVO vo = null;
+		
+		for(int i=0; i<4; i++) {
+			vo = new TestVO();
+			vo.setName("kim" + i);
+			vo.setTel("02" + i);
+			list.add(vo);
+		}
+				
+		return list;
+	}
 	
 }

@@ -6,6 +6,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Home</title>
+	<link rel="stylesheet" href="resources/home.css">		<!-- css 파일 적용 -->
+	<script type="text/javascript" src="resources/home.js"></script>
 </head>
 <body>
 <h1>
@@ -13,5 +15,7 @@
 </h1>
 
 <P>  The time on the server is ${serverTime}. 얍얍얍ㅇ.</P>
+<img src = "resources/test1.jpg">
+<h2 id="test1"></h2>
 </body>
 </html>
